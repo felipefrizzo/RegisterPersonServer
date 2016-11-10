@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by felipefrizzo on 10/11/16.
@@ -35,6 +36,11 @@ public class Client implements Serializable{
     }
 
     public Client(final String name, final Date birthday, final String cpf, final String rg) {
+        Objects.requireNonNull(name, "Name cannot be null");
+        Objects.requireNonNull(birthday, "Birthday cannot be null");
+        Objects.requireNonNull(cpf, "Cpf cannot be null");
+        Objects.requireNonNull(rg, "Rg cannot be null");
+
         this.name = name;
         this.birthday = birthday;
         this.cpf = cpf;

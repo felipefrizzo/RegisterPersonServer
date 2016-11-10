@@ -5,6 +5,7 @@ import br.univel.persistence.AbstractDaoService;
 import br.univel.persistence.SessionFactory;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by felipefrizzo on 10/11/16.
@@ -15,6 +16,8 @@ public class ClientService implements AbstractDaoService<Client> {
 
     @Override
     public void save(final Client entity) {
+        Objects.requireNonNull(entity, "Entity cannot be null");
+
         session.openSessionWithTransaction();
         dao.save(entity);
         session.closeSessionWithTransaction();
@@ -22,6 +25,8 @@ public class ClientService implements AbstractDaoService<Client> {
 
     @Override
     public void update(final Client entity) {
+        Objects.requireNonNull(entity, "Entity cannot be null");
+
         session.openSessionWithTransaction();
         dao.update(entity);
         session.closeSessionWithTransaction();
@@ -29,6 +34,8 @@ public class ClientService implements AbstractDaoService<Client> {
 
     @Override
     public void delete(final Client entity) {
+        Objects.requireNonNull(entity, "Entity cannot be null");
+
         session.openSessionWithTransaction();
         dao.delete(entity);
         session.closeSessionWithTransaction();
@@ -36,6 +43,8 @@ public class ClientService implements AbstractDaoService<Client> {
 
     @Override
     public Client getById(final Long id) {
+        Objects.requireNonNull(id, "Id cannot be null");
+
         session.openSessionWithTransaction();
         Client client = dao.getById(id);
         session.closeSessionWithTransaction();

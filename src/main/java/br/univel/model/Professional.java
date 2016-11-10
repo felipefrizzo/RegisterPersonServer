@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by felipefrizzo on 10/11/16.
@@ -35,6 +36,11 @@ public class Professional implements Serializable{
     }
 
     public Professional(final String name, final Date birthday, final String username, final String password) {
+        Objects.requireNonNull(name, "Name cannot be null");
+        Objects.requireNonNull(birthday, "Birthday cannot be null");
+        Objects.requireNonNull(username, "Cpf cannot be null");
+        Objects.requireNonNull(password, "Rg cannot be null");
+
         this.name = name;
         this.birthday = birthday;
         this.username = username;
