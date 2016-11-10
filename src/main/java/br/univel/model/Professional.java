@@ -21,7 +21,7 @@ public class Professional implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @Column(name = "name", unique = true)
     private String name;
     @Column(name = "birthday")
@@ -41,11 +41,11 @@ public class Professional implements Serializable{
         this.password = password;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final Integer id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
