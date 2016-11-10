@@ -7,13 +7,39 @@ import java.util.List;
  */
 public interface AbstractDaoService<T> {
 
+    /**
+     * Insert a new Client into the database.
+     *
+     * @param entity
+     */
     void save(final T entity);
 
+    /**
+     * Update the state of Client.
+     *
+     * @param entity
+     */
     void update(final T entity);
 
+    /**
+     * Delete a Client from the database.
+     *
+     * @param entity
+     */
     void delete(final T entity);
 
+    /**
+     * Find Client by ID.
+     *
+     * @param id
+     * @return
+     */
     T getById(final Long id);
 
+    /**
+     * Find all Clients in the database.
+     *
+     * @return
+     */
     List<T> getAll();
 }
