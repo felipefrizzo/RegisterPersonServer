@@ -1,5 +1,7 @@
 package br.univel.server;
 
+import java.io.IOException;
+
 /**
  * Created by felipefrizzo on 10/11/16.
  */
@@ -27,5 +29,5 @@ public interface RegisterPersonServer {
     /**
      * Shutdown server when started.
      */
-    void shoudown();
+    void shoutdown() throws IOException;
 }

@@ -8,28 +8,28 @@ import java.util.List;
 public interface AbstractDao<T> {
 
     /**
-     * Insert a new Client into the database.
+     * Insert a new Object into the database.
      *
      * @param entity
      */
     void save(final T entity);
 
     /**
-     * Update the state of Client.
+     * Update the state of Object.
      *
      * @param entity
      */
     void update(final T entity);
 
     /**
-     * Delete a Client from the database.
+     * Delete a Object from the database.
      *
      * @param entity
      */
     void delete(final T entity);
 
     /**
-     * Find Client by ID.
+     * Find Object by ID.
      *
      * @param id
      * @return
@@ -37,7 +37,7 @@ public interface AbstractDao<T> {
     T getById(final Long id);
 
     /**
-     * Find all Clients in the database.
+     * Find all Objects in the database.
      *
      * @return
      */
