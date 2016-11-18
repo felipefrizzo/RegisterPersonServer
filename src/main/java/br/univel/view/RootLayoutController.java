@@ -27,7 +27,7 @@ public class RootLayoutController {
     private TextField textFieldVerify;
 
     @FXML
-    void handleRestartServer(ActionEvent event) {
+    void handleRestartServer(final ActionEvent event) {
 
     }
 }

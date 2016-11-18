@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class Cryptography implements AbstractCryptography {
     @Override
-    public String createCryptography(String password) {
+    public String createCryptography(final String password) {
         Objects.requireNonNull(password, "Password cannot be null");
 
         MessageDigest messageDigest;

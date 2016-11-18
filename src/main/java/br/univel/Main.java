@@ -18,7 +18,7 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         launch(args);
     }
 
@@ -27,7 +27,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(final Stage primaryStage) throws Exception {
         Objects.requireNonNull(primaryStage, "Stage cannot be null");
 
         this.primaryStage = primaryStage;
