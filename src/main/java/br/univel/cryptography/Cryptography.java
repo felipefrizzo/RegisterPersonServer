@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public class Cryptography implements AbstractCryptography {
+public class Cryptography implements GenericCryptography {
     @Override
     public String createCryptography(final String password) {
         Objects.requireNonNull(password, "Password cannot be null");

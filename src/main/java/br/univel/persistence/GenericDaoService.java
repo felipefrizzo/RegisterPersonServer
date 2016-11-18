@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public interface AbstractDao<T> {
+public interface GenericDaoService<T> {
 
     /**
      * Insert a new Object into the database.

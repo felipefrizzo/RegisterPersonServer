@@ -3,7 +3,7 @@ package br.univel.cryptography;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public interface AbstractCryptography {
+public interface GenericCryptography {
 
     /**
      * Cryptography for password.

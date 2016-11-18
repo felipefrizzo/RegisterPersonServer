@@ -1,7 +1,7 @@
 package br.univel.persistence.client;
 
 import br.univel.model.Client;
-import br.univel.persistence.AbstractDaoService;
+import br.univel.persistence.GenericDaoService;
 import br.univel.persistence.SessionFactory;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public class ClientService implements AbstractDaoService<Client> {
+public class ClientService implements GenericDaoService<Client> {
     private final static SessionFactory session = SessionFactory.getInstance();
     private final static ClientDao dao = new ClientDao();
 
