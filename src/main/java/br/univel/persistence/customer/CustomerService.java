@@ -1,6 +1,6 @@
-package br.univel.persistence.client;
+package br.univel.persistence.customer;
 
-import br.univel.model.Client;
+import br.univel.model.Customer;
 import br.univel.persistence.GenericDaoService;
 import br.univel.persistence.SessionFactory;
 
@@ -10,12 +10,12 @@ import java.util.Objects;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public class ClientService implements GenericDaoService<Client> {
-    private final static SessionFactory session = SessionFactory.getInstance();
-    private final static ClientDao dao = new ClientDao();
+public class CustomerService implements GenericDaoService<Customer> {
+    private final SessionFactory session = SessionFactory.getInstance();
+    private final CustomerDao dao = new CustomerDao();
 
     @Override
-    public void save(final Client entity) {
+    public void save(final Customer entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -24,7 +24,7 @@ public class ClientService implements GenericDaoService<Client> {
     }
 
     @Override
-    public void update(final Client entity) {
+    public void update(final Customer entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -33,7 +33,7 @@ public class ClientService implements GenericDaoService<Client> {
     }
 
     @Override
-    public void delete(final Client entity) {
+    public void delete(final Customer entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -42,20 +42,20 @@ public class ClientService implements GenericDaoService<Client> {
     }
 
     @Override
-    public Client getById(final Long id) {
+    public Customer getById(final Long id) {
         Objects.requireNonNull(id, "Id cannot be null");
 
         session.openSessionWithTransaction();
-        Client client = dao.getById(id);
+        Customer client = dao.getById(id);
         session.closeSessionWithTransaction();
 
         return client;
     }
 
     @Override
-    public List<Client> getAll() {
+    public List<Customer> getAll() {
         session.openSessionWithTransaction();
-        List<Client> list = dao.getAll();
+        List<Customer> list = dao.getAll();
         session.closeSessionWithTransaction();
 
         return list;

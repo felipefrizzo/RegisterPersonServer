@@ -1,6 +1,6 @@
 package br.univel.server;
 
-import br.univel.model.Client;
+import br.univel.model.Customer;
 import br.univel.model.Professional;
 
 /**
@@ -30,9 +30,9 @@ public interface RegisterPersonServerListener {
     void professionalReceived(final Professional professional);
 
     /**
-     * Notify when server receives a Client CRUD from client.
+     * Notify when server receives a Customer CRUD from client.
      *
-     * @param client
+     * @param customer
      */
-    void clientReceived(final Client client);
+    void customerReceived(final Customer customer);
 }

@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Created by felipefrizzo on 10/11/16.
  */
-public class SessionFactory {
+public final class SessionFactory {
 
     private Session session;
     private Transaction transaction;
