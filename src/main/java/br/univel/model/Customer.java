@@ -1,11 +1,8 @@
 package br.univel.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import br.univel.enums.OperationType;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -31,6 +28,8 @@ public class Customer implements Serializable{
     private String cpf;
     @Column(name = "rg", unique = true)
     private String rg;
+    @Transient
+    private OperationType operationType;
 
     /**
      * Initializes a newly created instance of this type without specific arguments.
@@ -45,17 +44,20 @@ public class Customer implements Serializable{
      * @param birthday
      * @param cpf
      * @param rg
+     * @param operationType
      */
-    public Customer(final String name, final Date birthday, final String cpf, final String rg) {
+    public Customer(final String name, final Date birthday, final String cpf, final String rg, final OperationType operationType) {
         Objects.requireNonNull(name, "Name cannot be null");
         Objects.requireNonNull(birthday, "Birthday cannot be null");
         Objects.requireNonNull(cpf, "Cpf cannot be null");
         Objects.requireNonNull(rg, "Rg cannot be null");
+        Objects.requireNonNull(operationType, "Operation Type cannot be null");
 
         this.name = name;
         this.birthday = birthday;
         this.cpf = cpf;
         this.rg = rg;
+        this.operationType = operationType;
     }
 
     /**
@@ -136,5 +138,21 @@ public class Customer implements Serializable{
      */
     public void setRg(final String rg) {
         this.rg = rg;
+    }
+
+    /**
+     *
+     * @return The current value of this Customer's Operation Type
+     */
+    public OperationType getOperationType() {
+        return operationType;
+    }
+
+    /**
+     *
+     * @param operationType New Value for this Customer's Operation Type
+     */
+    public void setOperationType(OperationType operationType) {
+        this.operationType = operationType;
     }
 }
