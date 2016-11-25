@@ -2,7 +2,13 @@ package br.univel.model;
 
 import br.univel.enums.OperationType;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -39,7 +45,6 @@ public class Customer implements Serializable{
 
     /**
      * Initializes a newly created instance of this type with specific arguments.
-     *
      * @param name
      * @param birthday
      * @param cpf
@@ -152,7 +157,7 @@ public class Customer implements Serializable{
      *
      * @param operationType New Value for this Customer's Operation Type
      */
-    public void setOperationType(OperationType operationType) {
+    public void setOperationType(final OperationType operationType) {
         this.operationType = operationType;
     }
 }

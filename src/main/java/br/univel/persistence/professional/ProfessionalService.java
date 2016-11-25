@@ -15,7 +15,7 @@ public class ProfessionalService implements GenericDaoService<Professional> {
     private final ProfessionalDao dao = new ProfessionalDao();
 
     @Override
-    public void save(Professional entity) {
+    public void save(final Professional entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -24,7 +24,7 @@ public class ProfessionalService implements GenericDaoService<Professional> {
     }
 
     @Override
-    public void update(Professional entity) {
+    public void update(final Professional entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -33,7 +33,7 @@ public class ProfessionalService implements GenericDaoService<Professional> {
     }
 
     @Override
-    public void delete(Professional entity) {
+    public void delete(final Professional entity) {
         Objects.requireNonNull(entity, "Entity cannot be null");
 
         session.openSessionWithTransaction();
@@ -42,7 +42,7 @@ public class ProfessionalService implements GenericDaoService<Professional> {
     }
 
     @Override
-    public Professional getById(Long id) {
+    public Professional getById(final Long id) {
         Objects.requireNonNull(id, "Id cannot be null");
 
         session.openSessionWithTransaction();

@@ -28,7 +28,7 @@ public class ProfessionalDao implements GenericDao<Professional> {
     }
 
     @Override
-    public Professional getById(Long id) {
+    public Professional getById(final Long id) {
         return session.getSession().get(Professional.class, id);
     }
 
