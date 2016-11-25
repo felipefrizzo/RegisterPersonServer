@@ -4,7 +4,7 @@ import br.univel.enums.OperationType;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -23,7 +23,7 @@ public class Professional implements Serializable{
     @Column(name = "name", unique = true)
     private String name;
     @Column(name = "birthday")
-    private Date birthday;
+    private LocalDate birthday;
     @Column(name = "username", unique = true)
     private String username;
     @Column(name = "password", unique = true)
@@ -46,7 +46,7 @@ public class Professional implements Serializable{
      * @param password
      * @param operationType
      */
-    public Professional(final String name, final Date birthday, final String username, final String password, final OperationType operationType) {
+    public Professional(final String name, final LocalDate birthday, final String username, final String password, final OperationType operationType) {
         Objects.requireNonNull(name, "Name cannot be null");
         Objects.requireNonNull(birthday, "Birthday cannot be null");
         Objects.requireNonNull(username, "Cpf cannot be null");
@@ -95,7 +95,7 @@ public class Professional implements Serializable{
      *
      * @return The current value of this Professional's Birthday
      */
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
@@ -103,7 +103,7 @@ public class Professional implements Serializable{
      *
      * @param birthday New Value for this Professional's Birthday
      */
-    public void setBirthday(final Date birthday) {
+    public void setBirthday(final LocalDate birthday) {
         this.birthday = birthday;
     }
 

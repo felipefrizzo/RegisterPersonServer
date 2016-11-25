@@ -1,5 +1,7 @@
 package br.univel;
 
+import br.univel.server.RegisterPersonServer;
+import br.univel.server.socket.ServerSocket;
 import br.univel.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private final RegisterPersonServer server = new ServerSocket(8080);
 
     public static void main(final String[] args) {
         launch(args);
@@ -47,6 +50,8 @@ public class Main extends Application {
 
             RootLayoutController controller = loader.getController();
             controller.setMain(this);
+            controller.setServer(server);
+            controller.start();
 
             primaryStage.show();
         } catch (IOException e) {
