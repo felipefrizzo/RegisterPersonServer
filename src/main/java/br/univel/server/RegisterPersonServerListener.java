@@ -22,17 +22,4 @@ public interface RegisterPersonServerListener {
      */
     void serverShutdown(final RegisterPersonServer server);
 
-    /**
-     * Notify when server receives a Professional CRUD from client.
-     *
-     * @param professional
-     */
-    void professionalReceived(final Professional professional);
-
-    /**
-     * Notify when server receives a Customer CRUD from client.
-     *
-     * @param customer
-     */
-    void customerReceived(final Customer customer);
 }
