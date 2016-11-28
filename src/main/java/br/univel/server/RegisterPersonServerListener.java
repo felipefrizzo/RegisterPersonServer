@@ -1,8 +1,5 @@
 package br.univel.server;
 
-import br.univel.model.Customer;
-import br.univel.model.Professional;
-
 /**
  * Created by felipefrizzo on 10/11/16.
  */
