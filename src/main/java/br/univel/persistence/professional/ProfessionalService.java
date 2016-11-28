@@ -60,4 +60,14 @@ public class ProfessionalService implements GenericDaoService<Professional> {
 
         return list;
     }
+
+    public Professional getByUsername(final String username) {
+        Objects.requireNonNull(username, "Username cannot be null");
+
+        session.openSessionWithTransaction();
+        Professional professional = dao.getByUsername(username);
+        session.closeSessionWithTransaction();
+
+        return professional;
+    }
 }

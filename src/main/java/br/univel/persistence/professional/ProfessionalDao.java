@@ -36,4 +36,11 @@ public class ProfessionalDao implements GenericDao<Professional> {
     public List<Professional> getAll() {
         return (List<Professional>) session.getSession().createQuery("from Professional").list();
     }
+
+    public Professional getByUsername(final String username) {
+        return (Professional) session.getSession()
+                .createQuery("from Professional where username=:username")
+                .setParameter("username", username)
+                .uniqueResult();
+    }
 }

@@ -9,7 +9,7 @@ public interface GenericCryptography {
      * Cryptography for password.
      *
      * @param password
-     * @return
+     * @return the password encrypted
      */
     String createCryptography(String password);
 }
