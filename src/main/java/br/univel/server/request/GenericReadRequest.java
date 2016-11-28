@@ -7,6 +7,7 @@ public interface GenericReadRequest {
 
     /**
      * Read request and redirect to methods POST, PUT, DELETE.
+     * @return
      */
-    void read();
+    Object read();
 }

@@ -21,6 +21,11 @@ public class ServerSocket implements RegisterPersonServer, Runnable {
     private final Executor pool = Executors.newFixedThreadPool(8);
     private final List<RegisterPersonServerListener> listeners = new ArrayList<>();
 
+    /**
+     * Initializes a newly created instance of this type with specific arguments.
+     *
+     * @param port
+     */
     public ServerSocket(final Integer port) {
         this.port = port;
     }
