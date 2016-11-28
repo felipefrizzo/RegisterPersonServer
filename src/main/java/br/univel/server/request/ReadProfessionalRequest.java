@@ -85,7 +85,7 @@ public class ReadProfessionalRequest implements GenericReadRequest {
             case GETBYUSERNAME:
                 if (this.professional.getUsername().isEmpty()) {
                     errorMessage.setError(true);
-                    errorMessage.setErrorText("Do not have Professional with this Usernmae");
+                    errorMessage.setErrorText("Do not have Professional with this Username");
 
                     object = errorMessage;
                 } else {
@@ -95,7 +95,7 @@ public class ReadProfessionalRequest implements GenericReadRequest {
             case LOGIN:
                 if (this.professional.getUsername().isEmpty() || this.professional.getPassword().isEmpty()) {
                     errorMessage.setError(true);
-                    errorMessage.setErrorText("Do not have Professional with this Usernmae or Password Invalid");
+                    errorMessage.setErrorText("The username or password cannot be empty");
 
                     object = errorMessage;
                 } else {
