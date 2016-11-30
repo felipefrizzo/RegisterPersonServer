@@ -36,6 +36,7 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Register Person Server Application");
 
+        this.server.verifyServer(10L);
         initRootLayout();
     }
 

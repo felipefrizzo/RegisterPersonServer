@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.univel.view.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.univel.view.RootLayoutController">
     <center>
         <GridPane BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -60,7 +60,7 @@
                         </Label>
                      </children>
                   </GridPane>
-                        <TextField fx:id="textFieldVerify" onKeyPressed="#onKeyPressedVerifyServer" prefHeight="27.0" prefWidth="84.0">
+                        <TextField fx:id="textFieldVerify" onKeyPressed="#onKeyPressedVerifyServer" prefHeight="27.0" prefWidth="84.0" text="10">
                             <HBox.margin>
                                 <Insets top="5.0" />
                             </HBox.margin>

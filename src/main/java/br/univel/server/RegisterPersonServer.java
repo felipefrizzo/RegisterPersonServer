@@ -1,6 +1,7 @@
 package br.univel.server;
 
 import java.io.IOException;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * Created by felipefrizzo on 10/11/16.
@@ -36,4 +37,10 @@ public interface RegisterPersonServer {
      * @param time
      */
     void verifyServer(final Long time);
+
+    /**
+     *
+     * @return The current value of the Future Scheduled
+     */
+    ScheduledFuture<?> getScheduledFuture();
 }

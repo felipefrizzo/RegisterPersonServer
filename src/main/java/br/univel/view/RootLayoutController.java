@@ -74,6 +74,7 @@ public class RootLayoutController implements RegisterPersonServerListener{
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER) {
+                    server.getScheduledFuture().cancel(true);
                     server.verifyServer(Long.parseLong(textFieldVerify.getText()));
                 }
             }

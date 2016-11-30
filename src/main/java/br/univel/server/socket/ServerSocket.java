@@ -8,10 +8,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created by felipefrizzo on 10/11/16.
@@ -23,6 +20,7 @@ public class ServerSocket implements RegisterPersonServer, Runnable {
     private final Executor pool = Executors.newFixedThreadPool(8);
     private final ScheduledExecutorService scheduled = Executors.newSingleThreadScheduledExecutor();
     private final List<RegisterPersonServerListener> listeners = new ArrayList<>();
+    private ScheduledFuture<?> scheduledFuture;
 
     /**
      * Initializes a newly created instance of this type with specific arguments.
@@ -77,13 +75,19 @@ public class ServerSocket implements RegisterPersonServer, Runnable {
 
     @Override
     public void verifyServer(final Long time) {
-        this.scheduled.scheduleAtFixedRate(new Runnable() {
+        scheduledFuture = this.scheduled.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 if (server.isClosed()) {
                    listeners.forEach(listner -> listner.serverShutdown(null));
+                } else {
+                    System.out.println("HI + " + time);
                 }
             }
-        }, 1, time, TimeUnit.SECONDS);
+        }, 0, time, TimeUnit.SECONDS);
+    }
+
+    public ScheduledFuture<?> getScheduledFuture() {
+        return scheduledFuture;
     }
 }
