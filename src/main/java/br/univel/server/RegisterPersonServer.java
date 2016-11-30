@@ -30,4 +30,10 @@ public interface RegisterPersonServer {
      * Shutdown server when started.
      */
     void shoutdown() throws IOException;
+
+    /**
+     * Create Thread to verify the server status.
+     * @param time
+     */
+    void verifyServer(final Long time);
 }
