@@ -80,8 +80,6 @@ public class ServerSocket implements RegisterPersonServer, Runnable {
             public void run() {
                 if (server.isClosed()) {
                    listeners.forEach(listner -> listner.serverShutdown(null));
-                } else {
-                    System.out.println("HI + " + time);
                 }
             }
         }, 0, time, TimeUnit.SECONDS);
